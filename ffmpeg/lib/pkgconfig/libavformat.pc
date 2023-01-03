@@ -1,0 +1,14 @@
+prefix=/opt/local/install_arm64
+exec_prefix=${prefix}
+libdir=/opt/local/install_arm64/lib
+includedir=/opt/local/install_arm64/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 59.16.100
+Requires: 
+Requires.private: libavcodec >= 59.18.100, libswresample >= 4.3.100, libavutil >= 57.17.100
+Conflicts:
+Libs: -L${libdir}  -lavformat 
+Libs.private: -lm -lbz2 -L/opt/local/lib -lz -Wl,-framework,CoreFoundation -Wl,-framework,Security
+Cflags: -I${includedir}
